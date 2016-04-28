@@ -7,6 +7,7 @@
 </head>
 <body>
 <h1>파일 업로드 예제</h1>
+<!-- 지금 action; 상대경로로 써있음 -->
 <form method="post" action="upload" enctype="multipart/form-data">
 	<label>email:</label>
 	<input type="text" name="email" value="kickscar@gmail.com">

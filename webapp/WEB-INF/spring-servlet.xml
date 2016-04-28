@@ -14,9 +14,13 @@
 	<!-- validator, conversionService, messageConverter를 자동으로 등록 -->
 	<mvc:annotation-driven />
 
-	<!-- the mvc resources tag does the magic -->
+	<!-- the mvc resources tag does the magic; 
+		*: 그 folder의 모든파일; **:그 folder밑의 모든 경로의 모든파일;
+		/product-images/로 들어오는 것은 모두 file:/temp/로 mapping 하시오! -->
+		 <!-- 한 dir.안에  파일 저장 가능 개수가 정해져있음 -> 폴더를 나눠야함 !!!!!-->
  	<mvc:resources mapping="/product-images/**" location="file:/temp/" />
  
+
 	<context:annotation-config />
 	<context:component-scan base-package="com.bit2015.fileupload" />
 	
@@ -33,11 +37,12 @@
 	<!-- 멀티파트 리졸버 -->
 	<bean id="multipartResolver" 
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<!-- 최대업로드 가능한 바이트크기 -->
+		<!-- *중요* 최대업로드 가능한 바이트크기 -->
 		<property name="maxUploadSize" value="52428800" />
 		<!-- 디스크에 임시 파일을 생성하기 전에 메모리에 보관할수있는 최대 바이트 크기 -->
 		<!-- property name="maxInMemorySize" value="52428800" /-->
 		<!-- defaultEncoding -->
+		<!--  file 넘길때는 encoding을 안하고 보내고 그냥 data만  utf-8로 바꿔줌 ; fileupload와 관련 없음-->
 		<property name="defaultEncoding" value="utf-8" />
 	</bean>	
 	

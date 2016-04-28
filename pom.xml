@@ -45,6 +45,8 @@
 		</dependency>
 
 		<!-- common fileupload -->
+		
+		<!-- multipart를 처리해주는 class를 multipart resolver로 spring-servlet.xml에 표현해준다. -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
