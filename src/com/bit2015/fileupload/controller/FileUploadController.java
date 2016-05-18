@@ -27,7 +27,8 @@ public class FileUploadController {
 
 	@RequestMapping("/upload")
 	public String upload(@RequestParam String email, @RequestParam("file1") MultipartFile file1, Model model) {
-//@ModelAttribute BoardVo vo -> 이게 될까? 안되면 multipart에 넣어야하고; 그럼 지저분하고; 하지만된다
+		// @ModelAttribute BoardVo vo -> 이게 될까? 안되면 multipart에 넣어야하고; 그럼 지저분하고;
+		// 하지만된다
 		// 보통 파라미터의 값 ;그냥 남겨봄
 		LOG.debug(" ######## email : " + email);
 
